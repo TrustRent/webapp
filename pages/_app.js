@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
     return (
         <>
             <Head>
-                <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+                <link rel="shortcut icon" type="image/x-icon" />
                 <title>TrustRent</title>
             </Head>
             <WalletConnectionProvider>

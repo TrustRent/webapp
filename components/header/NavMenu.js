@@ -1,4 +1,4 @@
-import { ClockIcon, CurrencyDollarIcon, UserCircleIcon, Cog6ToothIcon } from '@heroicons/react/24/outline'
+import { ClockIcon, UserCircleIcon, Cog6ToothIcon } from '@heroicons/react/24/outline'
 import { classNames } from '../../utils/classNames'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 import { truncate } from '../../utils/string'
@@ -6,30 +6,19 @@ import { PaperClipIcon } from '@heroicons/react/24/solid'
 
 require('@solana/wallet-adapter-react-ui/styles.css')
 
-const NavMenu = ({ connected, publicKey }) => {
+// Update in NavMenu component
+const NavMenu = ({ connected, publicKey, setActiveNavItem }) => {
     const menus = [
-        {
-            icon: ClockIcon,
-            item: 'Activity',
-            current: false,
-        },
-        {
-            icon: PaperClipIcon,
-            item: 'Agreements',
-            current: false,
-        },
-        {
-            icon: Cog6ToothIcon,
-            item: 'Settings',
-            current: false,
-        },
-    ]
+        { icon: ClockIcon, item: 'Activity', current: false },
+        { icon: PaperClipIcon, item: 'Agreements', current: false },
+        { icon: Cog6ToothIcon, item: 'Settings', current: false },
+    ];
 
     return (
         <nav className="flex flex-1 items-center justify-center">
             <ul className="flex flex-col space-y-10">
-                {menus.map(({ icon, item, current, action }, i) => (
-                    <NavMenuItem key={i} Icon={icon} item={item} current={current} action={action} />
+                {menus.map(({ icon, item, current }, i) => (
+                    <NavMenuItem key={i} Icon={icon} item={item} current={current} action={() => setActiveNavItem(item)} />
                 ))}
                 <li>
                     <WalletMultiButton className="phantom-button" startIcon={<UserCircleIcon style={{ height: 24, width: 24, color: '#111111' }} />}>
@@ -38,8 +27,8 @@ const NavMenu = ({ connected, publicKey }) => {
                 </li>
             </ul>
         </nav>
-    )
-}
+    );
+};
 
 const NavMenuItem = ({ Icon, item, current, action }) => {
     return (
