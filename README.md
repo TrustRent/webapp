@@ -1,3 +1,5 @@
+![Screenshot 2024-04-07 at 2 31 44 PM](https://github.com/TrustRent/webapp/assets/156262846/30a41ce7-cbd0-4b26-966a-5479c25307e1)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
