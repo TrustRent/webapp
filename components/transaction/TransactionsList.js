@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import TransactionDetailModal from './TransactionDetailModal'
 import TransactionItem from './TransactionItem'
+import SearchBar from '../home/SearchBar'
 
 const TransactionsList = ({ connected, transactions }) => {
     const [modalOpen, setModalOpen] = useState(false)
@@ -14,6 +15,7 @@ const TransactionsList = ({ connected, transactions }) => {
 
     return (
         <div>
+            <SearchBar></SearchBar>
             <div className="bg-[#f6f6f6] pb-4 pt-10">
                 <p className="mx-auto max-w-3xl px-10 text-sm font-medium uppercase text-[#abafb2] xl:px-0">Transactions</p>
             </div>

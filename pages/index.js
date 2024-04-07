@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import Action from '../components/header/Action'
 import NavMenu from '../components/header/NavMenu'
 import Profile from '../components/header/Profile'
-import SearchBar from '../components/home/SearchBar'
 import NewTransactionModal from '../components/transaction/NewTransactionModal'
 import TransactionsList from '../components/transaction/TransactionsList'
 import { useWallet } from '@solana/wallet-adapter-react'
@@ -30,6 +29,8 @@ const Home = () => {
                 return <TransactionsList connected={connected} transactions={transactions} />;
             case 'Agreements':
                 return <>
+                <br></br>
+                <br></br>
                 <button onClick={() => setIsNewAgreementModalOpen(true)}>Create New Agreement</button>
                 <NewAgreementModal
                     modalOpen={isNewAgreementModalOpen}
@@ -55,9 +56,10 @@ const Home = () => {
 
                 <Action connected={connected} setModalOpen={setNewTransactionModalOpen} />
                 <NewTransactionModal modalOpen={newTransactionModalOpen} setModalOpen={setNewTransactionModalOpen} addTransaction={doTransaction} />
+                
             </header>
             <main className="flex flex-1 flex-col">
-                <SearchBar />
+                
                 {renderContent()}
             </main>
         </div>
