@@ -18,8 +18,8 @@ const NewAgreementModal = ({ modalOpen, setModalOpen, createAgreement }) => {
       dueDate,
       lateFee,
     };
-    createAgreement(agreementData); // This function needs to be implemented to handle the agreement creation
-    setModalOpen(false); // Close the modal after submission
+    createAgreement(agreementData); 
+    setModalOpen(false);
   };
 
   return (

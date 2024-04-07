@@ -9,6 +9,7 @@ import { useWallet } from '@solana/wallet-adapter-react'
 import TransactionQRModal from '../components/transaction/TransactionQRModal'
 import { useTrustRent } from '../hooks/trustrent'
 import NewAgreementModal from '../components/agreement/NewAgreementModal'
+import ProfileSettings from '../components/settings/ProfileSettings'
 
 const Home = () => {
     const { connected, publicKey } = useWallet()
@@ -37,8 +38,9 @@ const Home = () => {
                 />
             </>
             case 'Settings':
-                // Return the Settings component here
-                break;
+                return <>
+                <ProfileSettings></ProfileSettings>
+                </>
             default:
                 return <TransactionsList connected={connected} transactions={transactions} />;
         }
